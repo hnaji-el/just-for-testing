@@ -1,0 +1,39 @@
+{
+  "groups": [
+    {
+      "name": "app",
+      "type": "com.lims.shared.config.AppProperties",
+      "sourceType": "com.lims.shared.config.AppProperties"
+    },
+    {
+      "name": "app.auth",
+      "type": "com.lims.shared.config.AppProperties$Auth",
+      "sourceType": "com.lims.shared.config.AppProperties",
+      "sourceMethod": "getAuth()"
+    },
+    {
+      "name": "app.oauth2",
+      "type": "com.lims.shared.config.AppProperties$OAuth2",
+      "sourceType": "com.lims.shared.config.AppProperties",
+      "sourceMethod": "getOauth2()"
+    }
+  ],
+  "properties": [
+    {
+      "name": "app.auth.token-expiration-msec",
+      "type": "java.lang.Long",
+      "sourceType": "com.lims.shared.config.AppProperties$Auth"
+    },
+    {
+      "name": "app.auth.token-secret",
+      "type": "java.lang.String",
+      "sourceType": "com.lims.shared.config.AppProperties$Auth"
+    },
+    {
+      "name": "app.oauth2.authorized-redirect-uris",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.lims.shared.config.AppProperties$OAuth2"
+    }
+  ],
+  "hints": []
+}

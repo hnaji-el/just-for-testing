@@ -1,0 +1,49 @@
+# Database configuration props
+spring:
+  datasource:
+    username: root
+    password: khalid
+    url: jdbc:mysql://localhost:3306/demo?createDatabaseIfNotExist=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # Hibernate props
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+
+  security:
+    oauth2:
+      client:
+        registration:
+          outlook:
+            client-id: 54022d25-7098-4bc5-9385-5b77f420c818
+            client-secret: QAe8Q~TufC5~zQMtxgo2B2cyrdv6AHASeWDD2bf4
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8080/login/oauth2/code/outlook
+            scope:
+              - user.read
+        provider:
+          outlook:
+            authorization-uri: https://login.microsoftonline.com/common/oauth2/v2.0/authorize?prompt=select_account
+            token-uri: https://login.microsoftonline.com/common/oauth2/v2.0/token
+            user-info-uri: https://graph.microsoft.com/v1.0/me
+            user-name-attribute: mail
+
+
+app:
+  auth:
+    tokenSecret: 926D96C90030DD58429D2751AC1BDBBC926D96C90030DD58429D2751AC1BDBBC926D96C90030DD58429D2751AC1BDBBC926D96C90030DD58429D2751AC1BDBBC
+    tokenExpirationMsec: 864000000
+  oauth2:
+    authorizedRedirectUris: http://localhost:5173/auth/
+
+
+#
+#logging:
+#  level:
+#    org:
+#      springframework: TRACE
